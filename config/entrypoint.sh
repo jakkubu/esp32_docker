@@ -10,11 +10,11 @@ if [ ! -d $IDF_PATH ]; then
 	cp -f $IDF_PATH/requirements.txt /config
 	echo "After copying esp-idf to working dir you should rebuild docker file with build argument IDF_REBUILD e.g.:
 		docker build -t=esp32 --build-arg IDF_REBUILD=$RANDOM ."
-	chmod -R 777 /project
+	chmod -R o=u /project
 	exit
 fi
 
-chmod -R 777 /project
+chmod -R o=u /project
 
 # EXECUTE COMMAND
 exec "$@"

@@ -28,12 +28,13 @@ ENV IDF_PATH "/project/esp-idf"
 ENV HISTFILE "/project/docker_bash_history"
 ENV INPUTRC "/config/inputrc"
 
-# for colors in terminal
+# use this argument as point of rebuild
+ARG IDF_REBUILD
+
+# config setting up entryponint file + shell config files
 COPY config /config
 RUN echo ". /config/.bashrc_usr" >> ~/.bashrc
 
-# use this argument as point of rebuild
-ARG IDF_REBUILD
 COPY requirements.txt /esp32/
 RUN python -m pip install --user -r requirements.txt
 

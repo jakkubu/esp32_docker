@@ -62,7 +62,7 @@ To leave container press `ctrl+d` or type `exit`. Docker container will be clean
 
 ### Set static USB device name (only for Linux)
 
-USB ports may change and it's inconvenient to check every time proper usb device. If you setup static symlink to `/dev/ttyESP32` you may execute `start.sh` without -p attribute.
+USB ports may change and it's inconvenient to check every time proper USB device. If you setup static symlink to `/dev/ttyESP32` you may execute `start.sh` without -p attribute.
 
 Connect esp32 device and find exact ttyUSB number:
 
