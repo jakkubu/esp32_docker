@@ -12,7 +12,24 @@ Features list:
 
 Tested only in Linux. It should work for other systems (except for configuring static device name, but it's not necessary for building and uploading code). Contributions for Windows and Mac are welcome.
 
+## Available commands
+=====================
+
+Setup docker (you need to run it once):
+
+    ./esp32_docker/setup.sh
+
+Start docker:
+
+    ./esp32_docker/start.sh
+
+Inside docker you can use typical esp32 `make flash monitor`. There is also additional command for testing & cleaning
+
+- `test-make-flash TEST_COMPONENTS=<your_component>`
+- `test-make-clean`
+
 ## Setup guide
+==============
 
 ### Install docker
 
@@ -92,4 +109,3 @@ Plug out and in esp device and check if it worked:
 Now you can start docker with:
 
     ./esp32_docker/start.sh
-

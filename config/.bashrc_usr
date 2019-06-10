@@ -92,3 +92,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+alias test-make-flash="make -C ${IDF_PATH}/tools/unit-test-app flash monitor"
+alias test-make-clean="make -C ${IDF_PATH}/tools/unit-test-app clean"
