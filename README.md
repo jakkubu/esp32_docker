@@ -1,4 +1,6 @@
-# esp32_docker
+esp32_docker
+============
+
 Docker developer environment for building and flashing esp32 applications.
 
 This project provide easy setup and run commands for building and flashing code to esp32 device.
@@ -12,8 +14,8 @@ Features list:
 
 Tested only in Linux. It should work for other systems (except for configuring static device name, but it's not necessary for building and uploading code). Contributions for Windows and Mac are welcome.
 
-## Available commands
-=====================
+Available commands
+------------------
 
 Setup docker (you need to run it once):
 
@@ -28,8 +30,8 @@ Inside docker you can use typical esp32 `make flash monitor`. There is also addi
 - `test-make-flash TEST_COMPONENTS=<your_component>`
 - `test-make-clean`
 
-## Setup guide
-==============
+Setup guide
+-----------
 
 ### Install docker
 
@@ -89,7 +91,7 @@ Find device attributes:
 
     udevadm info -a -p  $(udevadm info -q path -n /dev/ttyUSB0)
 
-Create file in `/etc/udev/rules.d/` folder with *.rules extension e.g.: `20-ESP32.rules` and add some udev rules to it:
+Create file in `/etc/udev/rules.d/` folder with .rules extension e.g.: `20-ESP32.rules` and add some udev rules to it:
 
     # ESP-WROOM-32
     SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", SYMLINK+="ttyESP32"
