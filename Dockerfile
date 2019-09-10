@@ -15,8 +15,7 @@ RUN apt-get -qq update && apt-get install -y \
 	python-serial \
 	python-cryptography \
 	python-future \
-	python-pyparsing \
-	python-pyelftools
+	python-pyparsing
 
 WORKDIR /esp32
 RUN wget "https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz" \
