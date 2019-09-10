@@ -24,7 +24,7 @@ shift $((OPTIND-1))
 echo $esp32_port
 
 docker run -it --rm \
-	--device=$esp32_port:/dev/ttyESP32_docker \
+	--device=$esp32_port:/dev/ttyUSB0 \
 	--mount type=bind,source="$(pwd)",target=/project \
 	esp32 \
 	/bin/bash

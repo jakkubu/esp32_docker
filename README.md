@@ -69,9 +69,7 @@ To check if everything works copy esp-idf `get-started/hello_world` to your proj
 
     cp -r $IDF_PATH/examples/get-started/hello_world .
 
-Then set serial port to `/dev/ttyESP32_docker` for hello_world project. To do this follow [get-start guide step: Configure from esp-idf doc](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html#step-7-configure)
-
-After setting proper serial and saving configuration make flash and monitor the code:
+Then, after cloning test if all works correctly configuration make flash and monitor the code:
 
     make flash monitor
 
