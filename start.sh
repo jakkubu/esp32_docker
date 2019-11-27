@@ -5,10 +5,13 @@ OPTIND=1         # Reset in case getopts has been used previously in the shell.
 
 # Initialize our own variables:
 esp32_port=$(realpath /dev/ttyESP32)
+dry_run=false
 
-while getopts "p:" opt; do
+while getopts "p:d" opt; do
     case "$opt" in
     p)  esp32_port=$OPTARG
+        ;;
+    d)  dry_run=true
         ;;
     esac
 done
@@ -23,8 +26,16 @@ shift $((OPTIND-1))
 
 echo $esp32_port
 
-docker run -it --rm \
-	--device=$esp32_port:/dev/ttyUSB0 \
-	--mount type=bind,source="$(pwd)",target=/project \
-	esp32 \
-	/bin/bash
+if [ "$dry_run" = true ] ; then
+    docker run -it --rm \
+        --mount type=bind,source="$(pwd)",target=/project \
+        esp32 \
+        /bin/bash
+else
+    docker run -it --rm \
+        --device=$esp32_port:/dev/ttyUSB0 \
+        --mount type=bind,source="$(pwd)",target=/project \
+        esp32 \
+        /bin/bash
+fi
+
